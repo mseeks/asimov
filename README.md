@@ -1,4 +1,4 @@
-# asimov(http://github.com/msull92/asimov)
+# [asimov](http://github.com/msull92/asimov)
 
 A self-excercise to implement a bot that can learn word relations from mass text input and then be able to construct sentences.
 
