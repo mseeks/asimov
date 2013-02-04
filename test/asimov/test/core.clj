@@ -1,6 +1,10 @@
 (ns asimov.test.core
-  (:use [asimov.core])
-  (:use [clojure.test]))
+	(:use [asimov.core])
+	(:use [clojure.test]))
+  
+(deftest parsing
+	(is (= ["hello" "world"] (parse "hello world"))))
 
-(deftest replace-me ;; FIXME: write
-  (is false "No tests have been written."))
+(deftest relating
+	(println (relate "hello world!")))
+	;(is (= "{\"words\"{\"hello\"{\"length\":5}}}" (relate "hello"))))

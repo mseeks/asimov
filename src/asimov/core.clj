@@ -1,7 +1,10 @@
 (ns asimov.core
-	(use [[com.ashafa.clutch]
-		  [environ.core]]))
+	(:require [clojure.string :as string])
+	(:require [cheshire.core :as json]))
 
-(def db (assoc (cemerick.url/url "https://msull92.cloudant.com" "asimov")
-                    :username (env :asimov-db-username)
-                    :password (env :asimov-db-password)))
+(defn parse [text]
+	(string/split text #"\W+"))
+
+(defn relate [text]
+	(json/generate-string
+		(for [word (parse text)] {word {:length (count word)}})))
